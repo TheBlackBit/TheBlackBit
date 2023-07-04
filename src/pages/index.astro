@@ -1,37 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Toolbar from "../components/Toolbar.astro";
+import NormalText from "../components/NormalText.astro";
+import PrimaryButton from "../components/PrimaryButton.astro";
+import PrimaryTitle from "../components/PrimaryTitle.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
-  </main>
+<Layout title="TheBlackBit">
+  <!-- Home Section -->
+  <section class="h-screen grid grid-cols-2 items-center">
+    <div class="px-10">
+      <img src="/theblack01white.svg" class="animate-blur" />
+      <div class="px-20 grid grid-rows-2 gap-4">
+        <NormalText
+          text="software engineer specializing in mobile development."
+        />
+        <PrimaryButton title="GET IN TOUCH" />
+      </div>
+    </div>
+    <!-- Image Hero -->
+    <div class="relative">
+      <div class="h-full w-full absolute bg-gradient-to-r from-zinc-950"></div>
+      <div class="h-full w-full absolute bg-gradient-to-t from-zinc-950"></div>
+      <img src="/ever_workspace.png" class="h-screen w-screen object-cover" />
+    </div>
+  </section>
+
+  <!-- About me section -->
+  <section class="h-screen grid grid-cols-2 items-center">
+    <!-- Image Hero -->
+    <div class="relative">
+      <div class="h-full w-full absolute bg-gradient-to-b from-zinc-950 to-75%">
+      </div>
+      <div class="h-full w-full absolute bg-gradient-to-l from-zinc-950 to-10%">
+      </div>
+      <div class="h-full w-full absolute bg-gradient-to-t from-zinc-950"></div>
+      <img src="/me.png" class="h-screen w-screen object-cover" />
+    </div>
+    <div class="px-10">
+      <PrimaryTitle text="About me" />
+      <div class="py-8">
+        <p class="text-neutral-300 text-1xl">
+          My name is <strong class="text-sky-300">Ever Solis</strong>, owner of
+          TheBlackBit.
+        </p>
+        <NormalText
+          text="I am a software engineer with more than 6 years of experience."
+        />
+        <br />
+        <NormalText
+          text="Throughout these years I have been working with different projects and companies, from financial to small start-ups."
+        />
+        <br />
+        <NormalText
+          text="Take a look at my projects and experiences, and don't hesitate to contact me."
+        />
+      </div>
+    </div>
+  </section>
 </Layout>
+<Toolbar />
