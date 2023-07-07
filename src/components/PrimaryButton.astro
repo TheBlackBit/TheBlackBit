@@ -1,0 +1,15 @@
+---
+export interface Props {
+  title: String;
+}
+
+const { title } = Astro.props;
+---
+
+<div>
+  <a
+    href="#"
+    class="text-sky-600 border-[3px] rounded font-medium px-4 py-2 border-sky-600 hover:text-white hover:bg-sky-600 transition-colors"
+    >{title}</a
+  >
+</div>
