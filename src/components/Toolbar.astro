@@ -1,11 +1,14 @@
-<header class="py-6 px-10 flex fixed top-0 w-full justify-between items-center">
-  <img
-    src="/theblack01logowhite.svg"
-    alt="The black bit logo"
-    width="60"
-    height="33.6"
-  />
-  <nav>
+<header class="flex fixed top-0 w-full justify-between items-center">
+  <div class="px-10 py-6">
+    <img
+      src="/theblack01logowhite.svg"
+      alt="The black bit logo"
+      width="60"
+      height="33.6"
+    />
+  </div>
+
+  <nav class="py-6 px-10">
     <ul
       class="text-slate-200 child-hover:text-sky-300 child-hover:underline flex text-sm [&>li>a]:inline-block [&>li>a]:px-2 transition-colors"
     >
@@ -17,5 +20,49 @@
       <li><a href="#">Contact me</a></li>
     </ul>
   </nav>
+  <div class="w-full h-full absolute -z-10 bg-zinc-950 hidden" id="toolbar-bg">
+  </div>
 </header>
-<script></script>
+
+<style>
+  .hidden {
+    animation-duration: 0.1s;
+    animation-name: slideOut;
+  }
+
+  .visible {
+    animation-duration: 0.1s;
+    animation-name: slidein;
+  }
+  @keyframes slidein {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener("scroll", handleScroll);
+
+  function handleScroll(event) {
+    const element = document.getElementById("toolbar-bg");
+    if (window.scrollY > 0) {
+      element.classList.add("visible");
+      element.classList.remove("hidden");
+    } else if (window.scrollY == 0) {
+      element.classList.add("hidden");
+    }
+  }
+</script>
