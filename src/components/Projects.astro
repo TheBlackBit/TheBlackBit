@@ -1,0 +1,26 @@
+---
+import CardProject from "./CardProject.astro";
+import projectsData from "../data/projects.json";
+import ProjectLayout from "../layouts/ProjectLayout.astro";
+---
+
+{
+  projectsData.map((project, index) => (
+    <>
+      <ProjectLayout isPair={(index + 1) % 2 == 0}>
+        <CardProject
+          name={project.name}
+          stars={project.stars}
+          reviews={project.reviews}
+          downloads={project.downloads}
+          playstore={project.playstore}
+          appstore={project.appstore}
+          github={project.github}
+          description={project.description}
+          technologies={project.technologies}
+          imageUrl={project.imageUrl}
+        />
+      </ProjectLayout>
+    </>
+  ))
+}

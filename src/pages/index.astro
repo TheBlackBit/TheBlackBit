@@ -5,6 +5,7 @@ import NormalText from "../components/NormalText.astro";
 import PrimaryButton from "../components/PrimaryButton.astro";
 import PrimaryTitle from "../components/PrimaryTitle.astro";
 import Companies from "../components/Companies.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="TheBlackBit">
@@ -84,5 +85,33 @@ import Companies from "../components/Companies.astro";
     </div>
   </section>
 
+  <!-- Portfolio section -->
+  <section
+    class="px-40 grid grid-flow-row auto-rows-auto grid-cols-2 gap-x-10 gap-y-10"
+  >
+    <Projects />
+  </section>
   <Toolbar />
 </Layout>
+
+<script>
+  function elementInWindow(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+  }
+
+  function handelScroll() {
+    const tarjets = document.querySelectorAll(".js-show-on-scroll");
+
+    tarjets.forEach((element) => {
+      if (elementInWindow(element)) {
+        element.classList.add("motion-safe:animate-fadeIn");
+      } else {
+        element.classList.remove("motion-safe:animate-fadeIn");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", handelScroll);
+  handelScroll();
+</script>
