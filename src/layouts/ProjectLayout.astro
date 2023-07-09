@@ -8,11 +8,11 @@ const { isPair } = Astro.props;
 
 {
   isPair ? (
-    <div class="js-show-on-scroll bg-zinc-600 bg-opacity-20 h-[32rem] rounded-md relative inline-block p-6 overflow-hidden motion-safe:animate-fadeIn translate-y-8">
+    <div class="js-show-on-scroll bg-zinc-600 bg-opacity-20 h-[32rem] rounded-md relative inline-block p-6 overflow-hidden opacity-0  translate-y-8">
       <slot />
     </div>
   ) : (
-    <div class="js-show-on-scroll bg-zinc-600 bg-opacity-20 h-[32rem] rounded-md relative inline-block p-6 overflow-hidden motion-safe:animate-fadeIn">
+    <div class="js-show-on-scroll bg-zinc-600 bg-opacity-20 h-[32rem] rounded-md relative inline-block p-6 overflow-hidden opacity-0 ">
       <slot />
     </div>
   )

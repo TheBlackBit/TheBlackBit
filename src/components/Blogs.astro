@@ -1,0 +1,15 @@
+---
+import BlogCard from "./BlogCard.astro";
+import blogsData from "../data/blogs.json";
+---
+
+{
+  blogsData.map((blog) => (
+    <BlogCard
+      title={blog.title}
+      description={blog.description}
+      url={blog.url}
+      image={blog.image}
+    />
+  ))
+}

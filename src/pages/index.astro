@@ -6,18 +6,21 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 import PrimaryTitle from "../components/PrimaryTitle.astro";
 import Companies from "../components/Companies.astro";
 import Projects from "../components/Projects.astro";
+import Blogs from "../components/Blogs.astro";
+import ButtonRedirect from "../components/ButtonRedirect.astro";
 ---
 
 <Layout title="TheBlackBit">
+  <Toolbar />
   <!-- Home Section -->
-  <section class="h-screen grid grid-cols-2 items-center">
+  <section class="h-screen grid grid-cols-2 items-center" id="home">
     <div class="px-10">
       <img src="/theblack01white.svg" />
       <div class="px-20 grid grid-rows-2 gap-4">
         <NormalText
           text="software engineer specializing in mobile development."
         />
-        <PrimaryButton title="GET IN TOUCH" />
+        <PrimaryButton title="GET IN TOUCH" , url="#contact" />
       </div>
     </div>
     <!-- Image Hero -->
@@ -29,20 +32,24 @@ import Projects from "../components/Projects.astro";
   </section>
 
   <!-- About me section -->
-  <section class="h-screen grid grid-cols-2 items-center">
+  <section class="h-screen grid grid-cols-2 items-center py-20" id="about">
     <!-- Image Hero -->
     <div class="relative">
       <div class="h-full w-full absolute bg-gradient-to-b from-zinc-950 to-55%">
       </div>
-      <div class="h-full w-full absolute bg-gradient-to-l from-zinc-950 to-10%">
+      <div
+        class="h-full w-full absolute bg-gradient-to-l from-zinc-950 to-100%"
+      >
       </div>
       <div class="h-full w-full absolute bg-gradient-to-t from-zinc-950 to-55%">
       </div>
-      <img src="/me.png" class="h-screen w-screen object-cover" />
+      <div class="h-full w-full absolute bg-gradient-to-r from-zinc-950 to-55%">
+      </div>
+      <img src="/me.jpg" class="h-screen w-screen object-cover" />
     </div>
-    <div class="px-10">
+    <div class="about">
       <PrimaryTitle text="About me" />
-      <div class="py-8">
+      <div>
         <p class="text-neutral-300 text-1xl">
           My name is <strong class="text-sky-300">Ever Solis</strong>, owner of
           TheBlackBit.
@@ -64,7 +71,7 @@ import Projects from "../components/Projects.astro";
 
   <!-- Experience section -->
 
-  <section class="grid grid-cols-1 px-40 py-40">
+  <section class="grid grid-cols-1 px-40 py-40" id="experience">
     <!-- TimeLine -->
     <div class="pb-4">
       <PrimaryTitle text="Experience" />
@@ -90,7 +97,7 @@ import Projects from "../components/Projects.astro";
   </section>
 
   <!-- Portfolio section -->
-  <section class="px-40">
+  <section class="px-40 py-20" id="portfolio">
     <PrimaryTitle text="Portfolio" />
     <div
       class="grid grid-flow-row auto-rows-auto grid-cols-2 gap-x-10 gap-y-10 py-4"
@@ -98,27 +105,61 @@ import Projects from "../components/Projects.astro";
       <Projects />
     </div>
   </section>
-  <Toolbar />
+
+  <!-- Blog section -->
+  <section
+    class="h-screen w-screen bg-[url('/blog-bg.jpg')] bg-fixed bg-cover relative"
+    id="blog"
+  >
+    <div
+      class="h-screen w-screen absolute bg-gradient-to-t from-zinc-950 to-10%"
+    >
+    </div>
+
+    <div
+      class="h-screen w-screen absolute bg-gradient-to-b from-zinc-950 to-10%"
+    >
+    </div>
+
+    <div class="h-screen w-screen absolute bg-zinc-950 opacity-80"></div>
+
+    <div class="h-full w-full relative flex flex-row pt-20 px-40 bg">
+      <PrimaryTitle text="Blog" />
+
+      <div class="w-full grid grid-flow-col auto-cols-auto items-center gap-6">
+        <Blogs />
+        <div>
+          <ButtonRedirect
+            title="Read More"
+            url="https://medium.com/@thebackbit"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact section -->
+    <section class="h-screen w-screen" id="contact"></section>
+  </section>
+
+  <script>
+    function elementInWindow(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    function handelScroll() {
+      const tarjets = document.querySelectorAll(".js-show-on-scroll");
+
+      tarjets.forEach((element) => {
+        if (elementInWindow(element)) {
+          element.classList.add("animate-fadeIn");
+        } else {
+          element.classList.remove("animate-fadeIn");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", handelScroll);
+    handelScroll();
+  </script>
 </Layout>
-
-<script>
-  function elementInWindow(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom >= 0;
-  }
-
-  function handelScroll() {
-    const tarjets = document.querySelectorAll(".js-show-on-scroll");
-
-    tarjets.forEach((element) => {
-      if (elementInWindow(element)) {
-        element.classList.add("motion-safe:animate-fadeIn");
-      } else {
-        element.classList.remove("motion-safe:animate-fadeIn");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", handelScroll);
-  handelScroll();
-</script>
