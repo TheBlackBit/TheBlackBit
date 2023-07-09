@@ -2,7 +2,7 @@
   {
     "name": "Easy Schedule",
     "stars": "4,8",
-    "reviews": "1,2k",
+    "reviews": "882",
     "downloads": "100k +",
     "playstore": "https://play.google.com/store/apps/details?id=com.ti777.ever.myschedule",
     "appstore": null,
@@ -49,7 +49,7 @@
       "Firebase",
       "Paging3",
       "RxJava",
-      "Retrofit",
+      "KTOR",
       "SOLID",
       "ROOM",
       "Cache",

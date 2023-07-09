@@ -1,26 +1,31 @@
-<header class="flex fixed top-0 w-full justify-between items-center">
+<header class="flex fixed top-0 w-full justify-between z-10 items-center">
   <div class="px-10 py-6">
-    <img
-      src="/theblack01logowhite.svg"
-      alt="The black bit logo"
-      width="60"
-      height="33.6"
-    />
+    <a href="#">
+      <img
+        src="/theblack01logowhite.svg"
+        alt="The black bit logo"
+        width="60"
+        height="33.6"
+      />
+    </a>
   </div>
 
   <nav class="py-6 px-10">
     <ul
       class="text-slate-200 child-hover:text-sky-300 child-hover:underline flex text-sm [&>li>a]:inline-block [&>li>a]:px-2 transition-colors"
     >
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About me</a></li>
-      <li><a href="#">Experience</a></li>
-      <li><a href="#">Portfolio</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact me</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact me</a></li>
     </ul>
   </nav>
-  <div class="w-full h-full absolute -z-10 bg-zinc-950 hidden" id="toolbar-bg">
+  <div
+    class="w-full h-full absolute -z-10 bg-zinc-950 hidden opacity-80"
+    id="toolbar-bg"
+  >
   </div>
 </header>
 
