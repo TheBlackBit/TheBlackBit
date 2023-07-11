@@ -1,0 +1,13 @@
+---
+export interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div
+  class="bg-sky-500 bg-opacity-20 rounded-3xl text-zinc-400 flex justify-center px-3 h-6 items-center text-[12px]"
+>
+  {text}
+</div>

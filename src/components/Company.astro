@@ -1,5 +1,6 @@
 ---
 import NormalText from "./NormalText.astro";
+import Ship from "./ship.astro";
 export interface Props {
   name: string;
   position: string;
@@ -43,13 +44,7 @@ const { name, position, url, date, description, technologies, current } =
       <div class="py-4"><NormalText text={description} /></div>
 
       <div class="flex gap-2">
-        {
-          technologies.map((technology) => (
-            <div class="bg-sky-500 bg-opacity-20 rounded-3xl text-zinc-400 flex justify-center px-3  h-6 items-center  text-[12px]">
-              <NormalText text={technology} />
-            </div>
-          ))
-        }
+        {technologies.map((technology) => <Ship text={technology} />)}
       </div>
     </a>
   </div>
