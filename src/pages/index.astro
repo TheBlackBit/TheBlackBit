@@ -8,33 +8,47 @@ import Companies from "../components/Companies.astro";
 import Projects from "../components/Projects.astro";
 import Blogs from "../components/Blogs.astro";
 import ButtonRedirect from "../components/ButtonRedirect.astro";
+import ContactForm from "../components/ContactForm.astro";
+import SocialMedia from "../components/SocialMedia.astro";
 ---
 
 <Layout title="TheBlackBit">
   <Toolbar />
   <!-- Home Section -->
-  <section class="h-screen grid grid-cols-2 items-center" id="home">
-    <div class="px-10">
+  <section
+    class="flex min-[889px]:grid min-[889px]:grid-cols-2 items-center h-screen w-screen"
+    id="home"
+  >
+    <div class="min-[889px]:px-20 mt-36 px-4">
       <img src="/theblack01white.svg" />
-      <div class="px-20 grid grid-rows-2 gap-4">
-        <NormalText
-          text="software engineer specializing in mobile development."
-        />
+      <div class="min-[889px]:pl-20 max-[889px]:pl-10 grid grid-rows-2 gap-8">
+        <div class="w-56">
+          <h4 class="text-neutral-300">
+            software engineer specializing in mobile development.
+          </h4>
+        </div>
+
         <PrimaryButton title="GET IN TOUCH" , url="#contact" />
       </div>
     </div>
-    <!-- Image Hero -->
-    <div class="relative">
+
+    <div
+      class="min-[889px]:relative max-[889px]:absolute -z-20 w-full h-full overflow-hidden"
+    >
       <div class="h-full w-full absolute bg-gradient-to-r from-zinc-950"></div>
       <div class="h-full w-full absolute bg-gradient-to-t from-zinc-950"></div>
-      <img src="/ever_workspace.png" class="h-screen w-screen object-cover" />
+      <img src="/ever_workspace.png" class="object-cover" />
     </div>
+    <!-- Image Hero -->
   </section>
 
   <!-- About me section -->
-  <section class="h-screen grid grid-cols-2 items-center py-20" id="about">
+  <section
+    class="h-screen grid grid-cols-2 items-center max-[889px]:flex max-[889px]:items-end pb"
+    id="about"
+  >
     <!-- Image Hero -->
-    <div class="relative">
+    <div class="min-[889px]:relative absolute -z-20">
       <div class="h-full w-full absolute bg-gradient-to-b from-zinc-950 to-55%">
       </div>
       <div
@@ -45,40 +59,39 @@ import ButtonRedirect from "../components/ButtonRedirect.astro";
       </div>
       <div class="h-full w-full absolute bg-gradient-to-r from-zinc-950 to-55%">
       </div>
-      <img src="/me.jpg" class="h-screen w-screen object-cover" />
+      <img src="/me9.jpg" class="h-screen w-screen object-cover" />
     </div>
-    <div class="about">
+
+    <div class="px-4 mb-10">
       <PrimaryTitle text="About me" />
       <div>
         <p class="text-neutral-300 text-1xl">
-          My name is <strong class="text-sky-300">Ever Solis</strong>, owner of
-          TheBlackBit.
+          My name is <strong class="text-sky-300">Ever Solis</strong>, I am a
+          software engineer with more than 6 years of experience.<br />
+          Throughout these years I have been working with different projects and
+          companies, from financial to small start-ups.
+          <br />
+          <br />
+          Take a look at my projects and experiences, and don't hesitate to contact
+          me.
         </p>
-        <NormalText
-          text="I am a software engineer with more than 6 years of experience."
-        />
-        <br />
-        <NormalText
-          text="Throughout these years I have been working with different projects and companies, from financial to small start-ups."
-        />
-        <br />
-        <NormalText
-          text="Take a look at my projects and experiences, and don't hesitate to contact me."
-        />
       </div>
     </div>
   </section>
 
   <!-- Experience section -->
 
-  <section class="grid grid-cols-1 px-40 py-40" id="experience">
+  <section
+    class="flex flex-col py-20 lg:px-20 xl:px-40 px-4 max-[889px]:items-start min-[889px]:items-center"
+    id="experience"
+  >
     <!-- TimeLine -->
-    <div class="pb-4">
+    <div class="pb-4 self-start">
       <PrimaryTitle text="Experience" />
     </div>
 
-    <div class="py-16 px-5 relative grid grid-cols-1 justify-center">
-      <!-- TimeLineSkelleton -->
+    <!-- TimeLineSkelleton -->
+    <div class="py-16 px-5 relative grid grid-cols-1">
       <div class="flex-row absolute top-0 bottom-0">
         <div class="h-10 w-10 bg-zinc-400 rounded-full"></div>
 
@@ -90,7 +103,7 @@ import ButtonRedirect from "../components/ButtonRedirect.astro";
       </div>
 
       <!-- Experiences container -->
-      <div class="grid grid-flow-row auto-rows-max">
+      <div class="flex flex-col gap-16">
         <Companies />
       </div>
     </div>
@@ -127,39 +140,74 @@ import ButtonRedirect from "../components/ButtonRedirect.astro";
       <PrimaryTitle text="Blog" />
 
       <div class="w-full grid grid-flow-col auto-cols-auto items-center gap-6">
-        <Blogs />
-        <div>
+        <!-- <Blogs /> -->
+        <!-- <div>
           <ButtonRedirect
             title="Read More"
             url="https://medium.com/@thebackbit"
           />
-        </div>
+        </div> -->
       </div>
     </div>
+  </section>
+  <!-- Contact section -->
+  <section
+    class="h-screen w-screen py-40 px-40 grid grid-cols-2 items-center gap-14"
+    id="contact"
+  >
+    <ContactForm />
 
-    <!-- Contact section -->
-    <section class="h-screen w-screen" id="contact"></section>
+    <div class="flex flex-col">
+      <PrimaryTitle text="Contact me" />
+      <h2 class="mt-6 text-neutral-300 font-semibold text-sm">
+        Send me a message or follow me on my social networks.
+      </h2>
+
+      <p class="text-neutral-400 text-sm mt-2">
+        If you are interested in hiring me as a freelancer, having me join your
+        company, or simply following my work on my social media platforms,
+        please don't hesitate to contact me or follow me.<br />
+        <br /> Let's create an awesome comunity ;).
+      </p>
+
+      <!-- <SocialMedia /> -->
+    </div>
   </section>
 
-  <script>
-    function elementInWindow(element) {
-      const rect = element.getBoundingClientRect();
-      return rect.top < window.innerHeight && rect.bottom >= 0;
-    }
-
-    function handelScroll() {
-      const tarjets = document.querySelectorAll(".js-show-on-scroll");
-
-      tarjets.forEach((element) => {
-        if (elementInWindow(element)) {
-          element.classList.add("animate-fadeIn");
-        } else {
-          element.classList.remove("animate-fadeIn");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", handelScroll);
-    handelScroll();
-  </script>
+  <footer class="w-full bg-black h-36 justify-center items-center flex">
+    <div class="flex w-max justify-center items-center gap-16 text-neutral-300">
+      <p>© 2023 TheBlackBit</p>
+      <div class="w-px h-28 bg-zinc-400"></div>
+      <a href="#">
+        <img
+          src="/theblack01logowhite.svg"
+          alt="The black bit logo"
+          width="60"
+          height="33.6"
+        />
+      </a>
+    </div>
+  </footer>
 </Layout>
+
+<script>
+  function elementInWindow(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+  }
+
+  function handelScroll() {
+    const tarjets = document.querySelectorAll(".js-show-on-scroll");
+
+    tarjets.forEach((element) => {
+      if (elementInWindow(element)) {
+        element.classList.add("animate-fadeIn");
+      } else {
+        element.classList.remove("animate-fadeIn");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", handelScroll);
+  handelScroll();
+</script>

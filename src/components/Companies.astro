@@ -19,16 +19,14 @@ const data: Company[] = experienceData.map((company, index) => ({
 
 {
   data.map((company) => (
-    <div class="grid grid-cols-2 -translate-x-2 py-10">
-      <Company
-        name={company.name}
-        position={company.position}
-        url={company.url}
-        date={company.date}
-        description={company.description}
-        technologies={company.technologies}
-        current={company.current}
-      />
-    </div>
+    <Company
+      name={company.name}
+      position={company.position}
+      url={company.url}
+      date={company.date}
+      description={company.description}
+      technologies={company.technologies}
+      current={company.current}
+    />
   ))
 }

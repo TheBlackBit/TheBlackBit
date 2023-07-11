@@ -5,25 +5,8 @@
     "current": true,
     "url": "https://www.thebridge.social/es/",
     "position": "Senior Android Developer",
-    "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers, sre engineers and backend developers to understand the requirements and translate them into scalable and efficient Android solutions. Additionally, I actively participated in code reviews, conducted unit and integration testing, and identified and resolved any bugs or performance bottlenecks. ",
-    "technologies": [
-      "Android",
-      "Java",
-      "Kotlin",
-      "MVVM",
-      "Jetpack",
-      "LiveData",
-      "Firebase",
-      "Retrofit",
-      "TDD",
-      "Bitrise",
-      "Jacoco",
-      "Junit4",
-      "CI / CD",
-      "Code Climate",
-      "Espresso",
-      "Mockito"
-    ]
+    "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers, sre engineers and backend developers to understand the requirements and translate them into scalable and efficient Android solutions.",
+    "technologies": ["Java", "Kotlin", "MVVM", "CI/CD"]
   },
 
   {
@@ -32,26 +15,8 @@
     "current": false,
     "url": "https://www.novatechdev.com/",
     "position": "Senior Android Developer",
-    "description": "As a Senior Android Developer at Novatech, I have gained extensive experience in developing diverse types of apps, ranging from start-ups to bank and financial institutions. With a focus on delivering high-quality solutions, I have collaborated with cross-functional teams, ensuring seamless integration, security compliance, and user-centric experiences. Leveraging my expertise in Android development, I have successfully created scalable and innovative applications, while keeping up with the latest industry trends.",
-    "technologies": [
-      "Android",
-      "Kotlin",
-      "MVVM",
-      "Jetpack",
-      "Compose",
-      "Coroutines",
-      "Firebase",
-      "Retrofit",
-      "TDD",
-      "Flows",
-      "CI / CD",
-      "Circle Ci",
-      "SonarQube",
-      "Jacoco",
-      "Junit4",
-      "Espresso",
-      "Mockk"
-    ]
+    "description": "As a Senior Android Developer at Novatech, I have gained extensive experience in developing diverse types of apps, ranging from start-ups to bank and financial institutions.",
+    "technologies": ["Kotlin", "Compose", "Mockk", "Flows"]
   },
   {
     "name": "Fitune",
@@ -60,21 +25,7 @@
     "url": "https://es.fitune.io/",
     "position": "Android Developer",
     "description": "In my role as an Android Developer , I have been instrumental in shaping and implementing the mobile application's core features and functionality. Collaborating closely with the product team, I have contributed to creating an engaging user experience, integrating features such as workout tracking, personalized training plans.",
-    "technologies": [
-      "Android",
-      "Kotlin",
-      "MVVM",
-      "Jetpack",
-      "Coroutines",
-      "Rx Java",
-      "Firebase",
-      "Retrofit",
-      "Web",
-      "Vue.js",
-      "Espresso",
-      "Mockk",
-      "Junit4"
-    ]
+    "technologies": ["Kotlin", "MVVM", "Rx Java", "Vue.js"]
   },
   {
     "name": "Elaniin",
@@ -83,17 +34,7 @@
     "url": " https://www.elaniin.com/",
     "position": "Android Developer",
     "description": "As an Android Developer at Elaniin, I have had the privilege of working on a challenging and impactful project, developing a bank application. Collaborating closely with the client, I have been responsible for designing and implementing key features and functionalities that meet the stringent requirements of the banking industry.",
-    "technologies": [
-      "Android",
-      "Kotlin",
-      "MVVM",
-      "Jetpack",
-      "Firebase",
-      "Retrofit",
-      "Coroutines",
-      "LiveData",
-      "Junit4"
-    ]
+    "technologies": ["Kotlin", "MVVM", "Jetpack", "Retrofit"]
   },
   {
     "name": "Freelance / Indie",
@@ -101,23 +42,7 @@
     "current": false,
     "url": "#",
     "position": "Android Developer",
-    "description": "As a indie Android developer, I have had the opportunity to work on a diverse range of projects, taking on the role of both developer and entrepreneur. With a passion for creating unique and innovative mobile experiences, I have collaborated directly with clients to bring their app ideas to life. Leveraging my expertise in Android development, I have been responsible for the end-to-end process, from initial concept and design to development, testing, and deployment. ",
-    "technologies": [
-      "Android",
-      "Kotlin",
-      "Java",
-      "MVVM",
-      "Rx Java",
-      "MVP",
-      "Jetpack",
-      "Firebase",
-      "Retrofit",
-      "Coroutines",
-      "LiveData",
-      "Koin",
-      "Espresso",
-      "Mockk",
-      "Mockito"
-    ]
+    "description": "As a indie Android developer, I have had the opportunity to work on a diverse range of projects, taking on the role of both developer and entrepreneur.",
+    "technologies": ["Kotlin", "Java", "Rx Java", "MVI"]
   }
 ]
