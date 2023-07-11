@@ -64,7 +64,7 @@ import SocialMedia from "../components/SocialMedia.astro";
 
     <div class="px-4 mb-10">
       <PrimaryTitle text="About me" />
-      <div>
+      <div class="py-4">
         <p class="text-neutral-300 text-1xl">
           My name is <strong class="text-sky-300">Ever Solis</strong>, I am a
           software engineer with more than 6 years of experience.<br />
@@ -113,7 +113,7 @@ import SocialMedia from "../components/SocialMedia.astro";
   <section class="lg:px-20 xl:px-40 px-4 py-20" id="portfolio">
     <PrimaryTitle text="Portfolio" />
     <div
-      class="grid grid-flow-row auto-rows-auto grid-cols-2 gap-x-10 gap-y-10 py-4"
+      class="grid grid-flow-row auto-rows-auto grid-cols-2 max-[889px]:grid-cols-1 gap-x-10 gap-y-10 max-[889px]:gap-y-10 py-4"
     >
       <Projects />
     </div>
@@ -152,32 +152,34 @@ import SocialMedia from "../components/SocialMedia.astro";
   </section>
   <!-- Contact section -->
   <section
-    class="h-screen w-screen py-40 px-40 grid grid-cols-2 items-center gap-14"
+    class="h-screen w-screen lg:px-20 xl:px-40 px-4 py-20 min-[889px]:grid min-[889px]:grid-cols-2 items-center gap-12"
     id="contact"
   >
-    <ContactForm />
+    <div class="flex gap-4 flex-col">
+      <PrimaryTitle text="Contact me" />
+      <ContactForm />
+    </div>
 
     <div class="flex flex-col">
-      <PrimaryTitle text="Contact me" />
-      <h2 class="mt-6 text-neutral-300 font-semibold text-sm">
+      <h2 class="text-neutral-300 font-semibold text-sm">
         Send me a message or follow me on my social networks.
       </h2>
 
       <p class="text-neutral-400 text-sm mt-2">
         If you are interested in hiring me as a freelancer, having me join your
-        company, or simply following my work on my social media platforms,
-        please don't hesitate to contact me or follow me.<br />
-        <br /> Let's create an awesome comunity ;).
+        company, don't hesitate to get in touch.
       </p>
 
-      <!-- <SocialMedia /> -->
+      <SocialMedia />
     </div>
   </section>
 
-  <footer class="w-full bg-black h-36 justify-center items-center flex">
-    <div class="flex w-max justify-center items-center gap-16 text-neutral-300">
+  <footer class="w-full bg-black h-20 justify-center items-center flex">
+    <div
+      class="flex w-max justify-center items-center gap-16 text-neutral-300 text-sm"
+    >
       <p>© 2023 TheBlackBit</p>
-      <div class="w-px h-28 bg-zinc-400"></div>
+      <div class="w-px h-16 bg-zinc-400"></div>
       <a href="#">
         <img
           src="/theblack01logowhite.svg"

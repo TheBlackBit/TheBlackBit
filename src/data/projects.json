@@ -9,27 +9,7 @@
     "github": null,
     "imageUrl": "/es_preview.png",
     "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers",
-    "technologies": [
-      "Java",
-      "Kotlin",
-      "MVVM",
-      "Compose",
-      "WManager",
-      "Flows",
-      "Coroutines",
-      "hilt",
-      "Firebase",
-      "TDD",
-      "Jacoco",
-      "CI/CD",
-      "SOLID",
-      "ROOM",
-      "Fastlane",
-      "Sonarqube",
-      "Espresso",
-      "Mockk",
-      "Mockito"
-    ]
+    "technologies": ["Kotlin", "MVVM", "Compose", "CI/CD", "Flows"]
   },
 
   {
@@ -42,24 +22,7 @@
     "github": "#",
     "imageUrl": "/anime_mania_preview.png",
     "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers.",
-    "technologies": [
-      "Kotlin",
-      "MVI",
-      "MotionLayout",
-      "Firebase",
-      "Paging3",
-      "RxJava",
-      "KTOR",
-      "SOLID",
-      "ROOM",
-      "Cache",
-      "Koin",
-      "TDD",
-      "CI/CD",
-      "Fastlane",
-      "Espresso",
-      "Mockk"
-    ]
+    "technologies": ["Kotlin", "MVI", "MotionLayout", "Paging3", "RxJava"]
   },
 
   {
@@ -72,24 +35,7 @@
     "github": "#",
     "imageUrl": "/instaflix_preview.png",
     "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers.",
-    "technologies": [
-      "Kotlin",
-      "MVVM",
-      "Compose",
-      "Widget",
-      "Flows",
-      "Coroutines",
-      "SOLID",
-      "ROOM",
-      "Cache",
-      "hilt",
-      "Retrofit",
-      "TDD",
-      "CI/CD",
-      "Fastlane",
-      "Espresso",
-      "Mockk"
-    ]
+    "technologies": ["Kotlin", "MVVM", "Compose", "hilt", "Mockk"]
   },
 
   {
@@ -102,23 +48,6 @@
     "github": "#",
     "imageUrl": "/sity_tv_preview.png",
     "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers.",
-    "technologies": [
-      "Kotlin",
-      "MVVM",
-      "Interop",
-      "Compose",
-      "XML",
-      "Flows",
-      "Coroutines",
-      "SOLID",
-      "ROOM",
-      "Cache",
-      "Firebase",
-      "TDD",
-      "CI/CD",
-      "Fastlane",
-      "Espresso",
-      "Mockk"
-    ]
+    "technologies": ["Kotlin", "MVVM", "Interop", "Compose", "Flows"]
   }
 ]
