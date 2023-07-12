@@ -28,30 +28,15 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm ci
       - run: npm test
-      - name: Build Astro
-        run: npm run build 
+      - run: npm run build 
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
           name: Dist folder
           path: ${{ env.DISTRIBUTION_PATH }}
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy Astro to Cpanel
-    steps:
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ${{ env.DISTRIBUTION_PATH }}
