@@ -27,17 +27,17 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm run build 
+
 
   deploy:
     name: Deploy
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: FTP Uploader
-        uses: zinh/ftp-uploader-action@v0.4
-        with:
-           ftpHostname: ${{ secrets.FTP_SERVER }}
-           ftpUsername: ${{ secrets.FTP_USERNAME }}
-           ftpPassword: ${{ secrets.FTP_SERVER }}
-           files: ${{ env.DISTRIBUTION_PATH }} 
-           dest: ${{ env.DESTINATION_PATH }}   
+     - name: Astro FTP
+       uses: radenpioneer/astro-ftp-deploy@v0.1.1
+       with:
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         node-version: 16
