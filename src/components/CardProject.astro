@@ -1,6 +1,9 @@
 ---
+import Ship from "./Ship.astro";
+import PlatformBadge from "./PlatformBadge.astro";
 export interface Props {
   name: string;
+  platform: string[];
   stars: string;
   reviews: string;
   downloads: string;
@@ -14,6 +17,7 @@ export interface Props {
 
 const {
   name,
+  platform,
   stars,
   reviews,
   downloads,
@@ -26,7 +30,10 @@ const {
 } = Astro.props;
 ---
 
-<h2 class="text-white text font-bold tracking-wide">{name}</h2>
+<div class="flex items-center gap-2">
+  <h2 class="text-white text font-bold tracking-wide">{name}</h2>
+  <PlatformBadge platform={platform} />
+</div>
 
 <!-- Reviews -->
 
@@ -134,17 +141,11 @@ const {
   {description}
 </p>
 
-<div class="flex flex-col">
-  <div class="py-6 grid grid-cols-6 gap-x-2 gap-y-2">
-    {
-      technologies.map((technology) => (
-        <div class="bg-sky-500 bg-opacity-20 rounded-3xl text-zinc-400 flex justify-center w-16 text-[9px] h-5 items-center">
-          <p>{technology}</p>
-        </div>
-      ))
-    }
+<div class="flex flex-col mt-4">
+  <div class="flex gap-x-2 overflow-scroll h-10">
+    {technologies.map((technology) => <Ship text={technology} />)}
   </div>
-  <div class="self-center">
+  <div class="self-center py-20">
     <img src={imageUrl} class="h-80" loading="lazy" />
   </div>
 </div>

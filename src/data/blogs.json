@@ -1,15 +1,14 @@
 [
   {
-    "title": "Mixing XML and Jetpack Compose - Compose Interop",
-    "description": "asdasdasdasd",
-    "url": "https://medium.com/@thebackbit/jetpack-compose-interop-uniendo-xml-y-jetpack-compose-593fb5799933",
-    "image": "/interop.png"
-  },
-
-  {
     "title": "Jetpack compose - remember & remember saveable",
-    "description": "asdasdaodoiashdioeqoidqowid",
+    "description": "Unleashing the Power of State Management in Jetpack Compose with Remember and RememberSaveable...",
     "url": "",
     "image": "/mario.jpg"
+  },
+  {
+    "title": "Mixing XML and Jetpack Compose - Compose Interop",
+    "description": "The easiest way to migrate from XML to Compose...",
+    "url": "https://medium.com/@thebackbit/jetpack-compose-interop-uniendo-xml-y-jetpack-compose-593fb5799933",
+    "image": "/interop.png"
   }
 ]

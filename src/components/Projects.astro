@@ -10,6 +10,7 @@ import ProjectLayout from "../layouts/ProjectLayout.astro";
       <ProjectLayout isPair={(index + 1) % 2 == 0}>
         <CardProject
           name={project.name}
+          platform={project.platform}
           stars={project.stars}
           reviews={project.reviews}
           downloads={project.downloads}

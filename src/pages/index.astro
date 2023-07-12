@@ -20,11 +20,13 @@ import SocialMedia from "../components/SocialMedia.astro";
     id="home"
   >
     <div class="min-[889px]:px-20 mt-36 px-4">
-      <img src="/theblack01white.svg" />
+      <img src="/theblack01white.svg" class="animation-blur" />
       <div class="min-[889px]:pl-20 max-[889px]:pl-10 grid grid-rows-2 gap-8">
         <div class="w-56">
           <h4 class="text-neutral-300">
-            software engineer specializing in mobile development.
+            Software engineer specializing in <strong class="text-sky-400"
+              >mobile development.</strong
+            >
           </h4>
         </div>
 
@@ -64,10 +66,11 @@ import SocialMedia from "../components/SocialMedia.astro";
 
     <div class="px-4 mb-10">
       <PrimaryTitle text="About me" />
-      <div>
+      <div class="py-4">
         <p class="text-neutral-300 text-1xl">
-          My name is <strong class="text-sky-300">Ever Solis</strong>, I am a
-          software engineer with more than 6 years of experience.<br />
+          My name is <strong class="text-sky-300 text-xl">Ever Solis</strong>, I
+          am a software engineer with <strong class="underline">+ 6</strong> years
+          of experience.<br /><br />
           Throughout these years I have been working with different projects and
           companies, from financial to small start-ups.
           <br />
@@ -110,10 +113,10 @@ import SocialMedia from "../components/SocialMedia.astro";
   </section>
 
   <!-- Portfolio section -->
-  <section class="px-40 py-20" id="portfolio">
+  <section class="lg:px-20 xl:px-40 px-4 py-20" id="portfolio">
     <PrimaryTitle text="Portfolio" />
     <div
-      class="grid grid-flow-row auto-rows-auto grid-cols-2 gap-x-10 gap-y-10 py-4"
+      class="grid grid-flow-row auto-rows-auto grid-cols-2 max-[889px]:grid-cols-1 gap-x-10 gap-y-10 max-[889px]:gap-y-10 py-4"
     >
       <Projects />
     </div>
@@ -121,63 +124,58 @@ import SocialMedia from "../components/SocialMedia.astro";
 
   <!-- Blog section -->
   <section
-    class="h-screen w-screen bg-[url('/blog-bg.jpg')] bg-fixed bg-cover relative"
+    class="h-1/2 w-screen bg-[url('/blog-bg.jpg')] bg-fixed bg-cover relative"
     id="blog"
   >
-    <div
-      class="h-screen w-screen absolute bg-gradient-to-t from-zinc-950 to-10%"
-    >
+    <div class="h-full w-screen absolute bg-gradient-to-t from-zinc-950 to-10%">
     </div>
 
-    <div
-      class="h-screen w-screen absolute bg-gradient-to-b from-zinc-950 to-10%"
-    >
+    <div class="h-full w-screen absolute bg-gradient-to-b from-zinc-950 to-10%">
     </div>
 
-    <div class="h-screen w-screen absolute bg-zinc-950 opacity-80"></div>
-
-    <div class="h-full w-full relative flex flex-row pt-20 px-40 bg">
+    <div class="h-full w-screen absolute bg-zinc-950 opacity-75"></div>
+    <div
+      class="h-full w-full relative justify-center flex flex-col gap-4 py-20 px-4 lg:px-20 xl:px-40"
+    >
       <PrimaryTitle text="Blog" />
 
-      <div class="w-full grid grid-flow-col auto-cols-auto items-center gap-6">
-        <!-- <Blogs /> -->
-        <!-- <div>
-          <ButtonRedirect
-            title="Read More"
-            url="https://medium.com/@thebackbit"
-          />
-        </div> -->
+      <div class="flex gap-6 justify-center items-center">
+        <Blogs />
+
+        <ButtonRedirect title="More" url="https://medium.com/@thebackbit" />
       </div>
     </div>
   </section>
   <!-- Contact section -->
   <section
-    class="h-screen w-screen py-40 px-40 grid grid-cols-2 items-center gap-14"
+    class="w-screen lg:px-20 xl:px-40 px-4 py-20 flex flex-col min-[889px]:grid min-[889px]:grid-cols-2 items-center justify-center gap-12"
     id="contact"
   >
-    <ContactForm />
-
-    <div class="flex flex-col">
+    <div class="flex gap-4 flex-col w-full">
       <PrimaryTitle text="Contact me" />
-      <h2 class="mt-6 text-neutral-300 font-semibold text-sm">
+      <ContactForm />
+    </div>
+
+    <div class="flex flex-col w-full">
+      <h2 class="text-neutral-300 font-semibold text-sm">
         Send me a message or follow me on my social networks.
       </h2>
 
       <p class="text-neutral-400 text-sm mt-2">
-        If you are interested in hiring me as a freelancer, having me join your
-        company, or simply following my work on my social media platforms,
-        please don't hesitate to contact me or follow me.<br />
-        <br /> Let's create an awesome comunity ;).
+        If you are interested in hiring me as a freelancer or having me join
+        your company, don't hesitate to get in touch.
       </p>
 
-      <!-- <SocialMedia /> -->
+      <SocialMedia />
     </div>
   </section>
 
-  <footer class="w-full bg-black h-36 justify-center items-center flex">
-    <div class="flex w-max justify-center items-center gap-16 text-neutral-300">
+  <footer class="w-full bg-black h-20 justify-center items-center flex">
+    <div
+      class="flex w-max justify-center items-center gap-16 text-neutral-300 text-sm"
+    >
       <p>© 2023 TheBlackBit</p>
-      <div class="w-px h-28 bg-zinc-400"></div>
+      <div class="w-px h-16 bg-zinc-400"></div>
       <a href="#">
         <img
           src="/theblack01logowhite.svg"
@@ -189,6 +187,22 @@ import SocialMedia from "../components/SocialMedia.astro";
     </div>
   </footer>
 </Layout>
+
+<style>
+  .animation-blur {
+    animation-duration: 1.5s;
+    animation-name: blurry;
+  }
+
+  @keyframes blurry {
+    from {
+      filter: blur(4px);
+    }
+    to {
+      filter: blur(0);
+    }
+  }
+</style>
 
 <script>
   function elementInWindow(element) {
