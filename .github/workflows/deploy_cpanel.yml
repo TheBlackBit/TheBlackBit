@@ -31,5 +31,5 @@ jobs:
           server: ${{ env.SERVER-NAME-FTP }}
           username: ${{ env.USER-NAME-FTP }}
           password: ${{ secrets.FTP_PASSWORD }}
-          directory: "."
+          directory: "/"
           node-version: 16
