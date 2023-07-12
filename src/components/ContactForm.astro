@@ -1,0 +1,140 @@
+---
+import Progress from "./Progress.astro";
+import PopUp from "./PopUp.astro";
+---
+
+<form
+  name="contact-me-form"
+  id="contact-form"
+  accept-charset="utf-8"
+  action="https://formspree.io/f/moqoqlad"
+  method="post"
+  class="flex flex-col gap-4"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="YOUR NAME"
+    class="bg-zinc-700 appearance-none border-2 border-zinc-700 rounded w-full py-2 px-4 text-sm leading-tight focus:outline-none focus:border-sky-600 text-white"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="YOUR EMAIL"
+    class="bg-zinc-700 appearance-none border-2 border-zinc-700 rounded w-full py-2 px-4 text-sm leading-tight focus:outline-none focus:border-sky-600 text-white"
+    required
+  />
+
+  <input
+    type="text"
+    name="subject"
+    placeholder="SUBJECT"
+    class="bg-zinc-700 appearance-none border-2 border-zinc-700 rounded w-full py-2 px-4 text-sm leading-tight focus:outline-none focus:border-sky-600 text-white"
+    required
+  />
+
+  <textarea
+    name="message"
+    placeholder="MESSAGE"
+    class="bg-zinc-700 appearance-none border-2 border-zinc-700 rounded w-full py-2 px-4 h-32 text-sm leading-tight focus:outline-none focus:border-sky-600 text-white"
+  ></textarea>
+  <div class="grid grid-cols-2 w-full">
+    <div class="w-full h-full">
+      <div class="hidden h-full" id="pop-up-error">
+        <PopUp title="Something went wrong, try again" isError={true} />
+      </div>
+
+      <div class="hidden h-full" id="pop-up-success">
+        <PopUp title="Message sent successfully" isError={false} />
+      </div>
+    </div>
+
+    <div class="flex w-full justify-end">
+      <button
+        type="submit"
+        class="text-sm px-4 py-1 w-40 h-10 disabled:pointer-events-none text-sky-600 border-[2px] rounded uppercase border-sky-600 hover:text-white hover:bg-sky-600 transition-colors self-end flex items-center justify-center"
+        id="button-form"
+      >
+        <div class="hidden" id="progress">
+          <Progress />
+        </div>
+        <p id="button-text">Send Message</p>
+      </button>
+    </div>
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const progress = document.getElementById("progress");
+  const buttonText = document.getElementById("button-text");
+  const button = document.getElementById("button-form") as HTMLButtonElement;
+  const popUpSuccess = document.getElementById("pop-up-success");
+  const popUpError = document.getElementById("pop-up-error");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    onStartSendingMessageUiState();
+
+    const data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          showMessage(popUpSuccess, popUpError);
+        } else {
+          showMessage(popUpError, popUpSuccess);
+        }
+      })
+      .catch((error) => {
+        showMessage(popUpError, popUpSuccess);
+      })
+      .finally(() => {
+        onFinishSendingMessageUiState();
+      });
+  }
+
+  function onStartSendingMessageUiState() {
+    button.classList.add("bg-transparent");
+    button.classList.add("text-sky-600");
+    button.classList.add("cursor-not-allowed");
+    button.classList.add("opacity-80");
+    button.disabled = true;
+    buttonText.classList.add("hidden");
+    progress.classList.remove("hidden");
+  }
+
+  function onFinishSendingMessageUiState() {
+    progress.classList.add("hidden");
+    buttonText.classList.remove("hidden");
+    button.classList.remove("cursor-not-allowed");
+    button.classList.remove("opacity-80");
+    button.disabled = false;
+    form.reset();
+  }
+
+  function showMessage(elementToShow, elementToHide) {
+    if (!elementToHide.classList.contains("hidden")) {
+      elementToHide.classList.add("hidden");
+    }
+
+    if (elementToShow.classList.contains("hidden")) {
+      elementToShow.classList.remove("hidden");
+    }
+
+    elementToShow.classList.add("animate-fadeIn");
+    elementToShow.addEventListener("animationend", () => {
+      elementToShow.classList.remove("animate-fadeIn");
+      elementToShow.classList.add("animate-fadeOut");
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>

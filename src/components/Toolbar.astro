@@ -1,30 +1,58 @@
-<header class="flex fixed top-0 w-full justify-between items-center">
-  <div class="px-10 py-6">
-    <img
-      src="/theblack01logowhite.svg"
-      alt="The black bit logo"
-      width="60"
-      height="33.6"
-    />
+<header class="flex fixed top-0 w-full justify-between z-20 items-center">
+  <div class="py-6 px-4">
+    <a href="#">
+      <img
+        src="/theblack01logowhite.svg"
+        alt="The black bit logo"
+        width="60"
+        height="33.6"
+      />
+    </a>
   </div>
 
-  <nav class="py-6 px-10">
+  <nav
+    class="py-6 transition-all lg:flex max-[889px]:hidden max-[889px]:backdrop-blur-md max-[889px]:top-0 max-[889px]:left-0 max-[889px]:w-screen max-[889px]:h-screen max-[889px]:items-center max-[889px]:justify-center px-4"
+    id="nav-bar"
+  >
     <ul
-      class="text-slate-200 child-hover:text-sky-300 child-hover:underline flex text-sm [&>li>a]:inline-block [&>li>a]:px-2 transition-colors"
+      class="text-slate-200 child-hover:text-sky-300 child-hover:underline flex text-sm gap-4 max-[889px]:flex-col transition-colors"
     >
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About me</a></li>
-      <li><a href="#">Experience</a></li>
-      <li><a href="#">Portfolio</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact me</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact me</a></li>
     </ul>
   </nav>
-  <div class="w-full h-full absolute -z-10 bg-zinc-950 hidden" id="toolbar-bg">
+
+  <button id="nav-icon" class="w-12 max-[889px]:flex min-[889px]:hidden">
+    <div class="w-6 relative h-10">
+      <span
+        class="h-0.5 w-full bg-slate-200 absolute top-2 duration-200 ease-in-out"
+        id="menu-bar-1"></span>
+
+      <span
+        class="h-0.5 w-full bg-slate-200 absolute top-4 duration-200 ease-in-out"
+        id="menu-bar-2"></span>
+
+      <span
+        class="h-0.5 w-full bg-slate-200 absolute top-6 duration-200 ease-in-out"
+        id="menu-bar-3"></span>
+    </div>
+  </button>
+
+  <div
+    class="w-full h-full absolute -z-10 bg-zinc-950 hidden opacity-80"
+    id="toolbar-bg"
+  >
   </div>
 </header>
 
 <style>
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
   .hidden {
     animation-duration: 0.1s;
     animation-name: slideOut;
@@ -56,6 +84,12 @@
 <script>
   window.addEventListener("scroll", handleScroll);
 
+  const menuButton = document.getElementById("nav-icon");
+  const menuBar1 = document.getElementById("menu-bar-1");
+  const menuBar2 = document.getElementById("menu-bar-2");
+  const menuBar3 = document.getElementById("menu-bar-3");
+  const navBar = document.getElementById("nav-bar");
+
   function handleScroll(event) {
     const element = document.getElementById("toolbar-bg");
     if (window.scrollY > 0) {
@@ -63,6 +97,28 @@
       element.classList.remove("hidden");
     } else if (window.scrollY == 0) {
       element.classList.add("hidden");
+    }
+  }
+
+  menuButton.addEventListener("click", () => {
+    menuBar1.classList.toggle("rotate-[42deg]");
+    menuBar1.classList.toggle("origin-left");
+    menuBar2.classList.toggle("bg-gradient-to-r");
+    menuBar2.classList.toggle("-translate-x-3");
+    menuBar2.classList.toggle("from-slate-200");
+    menuBar2.classList.toggle("opacity-0");
+    menuBar3.classList.toggle("rotate-[-42deg]");
+    menuBar3.classList.toggle("origin-left");
+    showOrHideNavBar();
+  });
+
+  function showOrHideNavBar() {
+    if (navBar.classList.contains("max-[889px]:hidden")) {
+      navBar.classList.remove("max-[889px]:hidden");
+      navBar.classList.add("max-[889px]:absolute");
+      navBar.classList.add("max-[889px]:flex");
+    } else {
+      navBar.classList.add("max-[889px]:hidden");
     }
   }
 </script>

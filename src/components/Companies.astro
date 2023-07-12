@@ -6,6 +6,7 @@ interface Company {
   name: string;
   date: string;
   url: string;
+  platform: string[];
   position: string;
   description: string;
   technologies: string[];
@@ -19,16 +20,15 @@ const data: Company[] = experienceData.map((company, index) => ({
 
 {
   data.map((company) => (
-    <div class="grid grid-cols-2 -translate-x-2 py-10">
-      <Company
-        name={company.name}
-        position={company.position}
-        url={company.url}
-        date={company.date}
-        description={company.description}
-        technologies={company.technologies}
-        current={company.current}
-      />
-    </div>
+    <Company
+      name={company.name}
+      position={company.position}
+      url={company.url}
+      date={company.date}
+      platform={company.platform}
+      description={company.description}
+      technologies={company.technologies}
+      current={company.current}
+    />
   ))
 }

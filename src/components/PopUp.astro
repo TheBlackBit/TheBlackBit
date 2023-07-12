@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title: string;
+  isError: boolean;
+}
+
+const { title, isError } = Astro.props;
+const style = isError
+  ? "bg-red-500 rounded-md flex items-center justify-center text-xs text-white h-full"
+  : "bg-green-500 rounded-md flex items-center justify-center text-xs text-white h-full";
+---
+
+<div class={style}>
+  <p class="pr-2">{title}</p>
+  {
+    isError ? (
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.884 2.532C12.538 1.878 11.462 1.878 11.116 2.532L2.11596 19.532C2.03494 19.6844 1.99478 19.8551 1.99938 20.0276C2.00398 20.2001 2.05319 20.3685 2.14221 20.5164C2.23124 20.6642 2.35704 20.7864 2.50736 20.8712C2.65768 20.956 2.82739 21.0003 2.99996 21H21C21.1724 21.0004 21.342 20.956 21.4922 20.8713C21.6424 20.7866 21.7681 20.6644 21.8571 20.5167C21.946 20.3689 21.9951 20.2006 21.9997 20.0282C22.0042 19.8559 21.964 19.6852 21.883 19.533L12.884 2.532ZM13 18H11V16H13V18ZM11 14V9H13L13.001 14H11Z"
+          fill="white"
+        />
+      </svg>
+    ) : (
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 7.00003L9 19L3.5 13.5L4.91 12.09L9 16.17L19.59 5.59003L21 7.00003Z"
+          fill="white"
+        />
+      </svg>
+    )
+  }
+</div>

@@ -1,14 +1,15 @@
 ---
 export interface Props {
-  title: String;
+  title: string;
+  url: string;
 }
 
-const { title } = Astro.props;
+const { title, url } = Astro.props;
 ---
 
 <div>
   <a
-    href="#"
+    href={url}
     class="text-sky-600 border-[3px] rounded font-medium px-4 py-2 border-sky-600 hover:text-white hover:bg-sky-600 transition-colors"
     >{title}</a
   >

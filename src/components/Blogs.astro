@@ -1,0 +1,26 @@
+---
+import BlogCard from "./BlogCard.astro";
+import blogsData from "../data/blogs.json";
+---
+
+{
+  blogsData.map((blog, index) =>
+    index > 0 ? (
+      <div class="max-[889px]:hidden">
+        <BlogCard
+          title={blog.title}
+          description={blog.description}
+          url={blog.url}
+          image={blog.image}
+        />
+      </div>
+    ) : (
+      <BlogCard
+        title={blog.title}
+        description={blog.description}
+        url={blog.url}
+        image={blog.image}
+      />
+    )
+  )
+}
