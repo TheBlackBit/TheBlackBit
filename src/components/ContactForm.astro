@@ -104,6 +104,8 @@ import PopUp from "./PopUp.astro";
   function onStartSendingMessageUiState() {
     button.classList.add("bg-transparent");
     button.classList.add("text-sky-600");
+    button.classList.add("cursor-not-allowed");
+    button.classList.add("opacity-80");
     button.disabled = true;
     buttonText.classList.add("hidden");
     progress.classList.remove("hidden");
@@ -112,6 +114,8 @@ import PopUp from "./PopUp.astro";
   function onFinishSendingMessageUiState() {
     progress.classList.add("hidden");
     buttonText.classList.remove("hidden");
+    button.classList.remove("cursor-not-allowed");
+    button.classList.remove("opacity-80");
     button.disabled = false;
     form.reset();
   }
