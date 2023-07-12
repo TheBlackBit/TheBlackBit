@@ -15,17 +15,15 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: build
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm ci
-      - name: Astro FTP
-        uses: radenpioneer/astro-ftp-deploy@v0.1.1
+      - uses: radenpioneer/astro-ftp-deploy@v0.1.1
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
