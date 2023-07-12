@@ -12,6 +12,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
+env:
+  SERVER-NAME-FTP: "ftp.theblackbit.io"
+  USER-NAME-FTP: "q6ah5kbo5axl"  
 
 jobs:
   build:
@@ -25,10 +28,7 @@ jobs:
       - run: npm ci
       - uses: radenpioneer/astro-ftp-deploy@v0.1.1
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ env.SERVER-NAME-FTP }}
+          username: ${{ env.USER-NAME-FTP }}
           password: ${{ secrets.FTP_PASSWORD }}
           node-version: 16
- 
-      
-
