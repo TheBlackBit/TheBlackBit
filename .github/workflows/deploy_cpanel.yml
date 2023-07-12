@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
   
 env:
-  SERVER-NAME-FTP: "ftp.theblackbit.io"
-  USER-NAME-FTP: "q6ah5kbo5axl"  
+  SERVER-NAME-FTP: "p3plzcpnl496826.prod.phx3.secureserver.net"
+  USER-NAME-FTP: "eversolis@theblackbit.io"  
 
 jobs:
   build:
@@ -31,4 +31,5 @@ jobs:
           server: ${{ env.SERVER-NAME-FTP }}
           username: ${{ env.USER-NAME-FTP }}
           password: ${{ secrets.FTP_PASSWORD }}
+          directory: "."
           node-version: 16
