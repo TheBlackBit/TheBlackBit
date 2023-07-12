@@ -6,6 +6,7 @@ interface Company {
   name: string;
   date: string;
   url: string;
+  platform: string[];
   position: string;
   description: string;
   technologies: string[];
@@ -24,6 +25,7 @@ const data: Company[] = experienceData.map((company, index) => ({
       position={company.position}
       url={company.url}
       date={company.date}
+      platform={company.platform}
       description={company.description}
       technologies={company.technologies}
       current={company.current}

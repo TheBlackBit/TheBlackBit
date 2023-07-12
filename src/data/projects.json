@@ -1,6 +1,7 @@
 [
   {
     "name": "Easy Schedule",
+    "platform": ["Android"],
     "stars": "4,8",
     "reviews": "882 Reviews",
     "downloads": "100k +",
@@ -8,12 +9,33 @@
     "appstore": null,
     "github": null,
     "imageUrl": "/es_preview.png",
-    "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers",
-    "technologies": ["Kotlin", "MVVM", "Compose", "CI/CD", "Flows"]
+    "description": "Native Android app that allows users to easily and quickly create their weekly routine. The application offers customization of tasks by adding icons, colors, and alarms, which helps users easily identify their activities",
+    "technologies": [
+      "Java",
+      "Kotlin",
+      "MVVM",
+      "Compose",
+      "WManager",
+      "CI/CD",
+      "Flows",
+      "Coroutines",
+      "hilt",
+      "Firebase",
+      "TDD",
+      "Jacoco",
+      "SOLID",
+      "ROOM",
+      "Fastlane",
+      "Sonarqube",
+      "Espresso",
+      "Mockk",
+      "Mockito"
+    ]
   },
 
   {
     "name": "AnimeMania",
+    "platform": ["Android"],
     "stars": null,
     "reviews": null,
     "downloads": null,
@@ -21,12 +43,30 @@
     "appstore": null,
     "github": "#",
     "imageUrl": "/anime_mania_preview.png",
-    "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers.",
-    "technologies": ["Kotlin", "MVI", "MotionLayout", "Paging3", "RxJava"]
+    "description": "Native android app that collects information about trending anime and manga using the kitsu API",
+    "technologies": [
+      "Kotlin",
+      "MVI",
+      "MotionLayout",
+      "Firebase",
+      "Paging3",
+      "RxJava",
+      "KTOR",
+      "SOLID",
+      "ROOM",
+      "Cache",
+      "Koin",
+      "TDD",
+      "CI/CD",
+      "Fastlane",
+      "Espresso",
+      "Mockk"
+    ]
   },
 
   {
     "name": "InstantFlix",
+    "platform": ["Android"],
     "stars": null,
     "reviews": null,
     "downloads": null,
@@ -34,12 +74,30 @@
     "appstore": null,
     "github": "#",
     "imageUrl": "/instaflix_preview.png",
-    "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers.",
-    "technologies": ["Kotlin", "MVVM", "Compose", "hilt", "Mockk"]
+    "description": "Native Android application that collects information from TV shows and movies using TheMovieDb Api. The App offers the facility of having a widget on the phone's home page to have the latest movie at the moment.",
+    "technologies": [
+      "Kotlin",
+      "MVVM",
+      "Compose",
+      "Widget",
+      "Flows",
+      "Coroutines",
+      "SOLID",
+      "ROOM",
+      "Cache",
+      "hilt",
+      "Retrofit",
+      "TDD",
+      "CI/CD",
+      "Fastlane",
+      "Espresso",
+      "Mockk"
+    ]
   },
 
   {
     "name": "SityTv",
+    "platform": ["Android"],
     "stars": null,
     "reviews": null,
     "downloads": null,
@@ -47,7 +105,24 @@
     "appstore": null,
     "github": "#",
     "imageUrl": "/sity_tv_preview.png",
-    "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers.",
-    "technologies": ["Kotlin", "MVVM", "Interop", "Compose", "Flows"]
+    "description": "Native android app that collect information of Tv Shows and Movies using TvMaze Api. The app has features such as bookmarks, cache, search among others.",
+    "technologies": [
+      "Kotlin",
+      "MVVM",
+      "Interop",
+      "Compose",
+      "XML",
+      "Flows",
+      "Coroutines",
+      "SOLID",
+      "ROOM",
+      "Cache",
+      "Firebase",
+      "TDD",
+      "CI/CD",
+      "Fastlane",
+      "Espresso",
+      "Mockk"
+    ]
   }
 ]

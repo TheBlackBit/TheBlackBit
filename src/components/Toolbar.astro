@@ -1,4 +1,4 @@
-<header class="flex fixed top-0 w-full justify-between z-10 items-center">
+<header class="flex fixed top-0 w-full justify-between z-20 items-center">
   <div class="py-6 px-4">
     <a href="#">
       <img
@@ -11,7 +11,7 @@
   </div>
 
   <nav
-    class="py-6 transition-all lg:flex max-[889px]:hidden max-[889px]:backdrop-blur-md max-[889px]:top-0 max-[889px]:left-0 max-[889px]:w-screen max-[889px]:h-screen max-[889px]:flex max-[889px]:items-center max-[889px]:justify-center px-4"
+    class="py-6 transition-all lg:flex max-[889px]:hidden max-[889px]:backdrop-blur-md max-[889px]:top-0 max-[889px]:left-0 max-[889px]:w-screen max-[889px]:h-screen max-[889px]:items-center max-[889px]:justify-center px-4"
     id="nav-bar"
   >
     <ul
@@ -116,6 +116,7 @@
     if (navBar.classList.contains("max-[889px]:hidden")) {
       navBar.classList.remove("max-[889px]:hidden");
       navBar.classList.add("max-[889px]:absolute");
+      navBar.classList.add("max-[889px]:flex");
     } else {
       navBar.classList.add("max-[889px]:hidden");
     }
