@@ -1,7 +1,8 @@
 ---
 import NormalText from "./NormalText.astro";
-import Ship from "./ShipTechnology.astro";
 import PlatformBadge from "./PlatformBadge.astro";
+import ShipTechnology from "./ShipTechnology.astro";
+
 export interface Props {
   name: string;
   position: string;
@@ -58,7 +59,7 @@ const {
       <div class="py-4"><NormalText text={description} /></div>
 
       <div class="flex gap-2 overflow-scroll h-10">
-        {technologies.map((technology) => <Ship text={technology} />)}
+        {technologies.map((technology) => <ShipTechnology text={technology} />)}
       </div>
     </a>
   </div>
