@@ -16,7 +16,7 @@ import SocialMedia from "../components/SocialMedia.astro";
   <Toolbar />
   <!-- Home Section -->
   <section
-    class="flex min-[889px]:grid min-[889px]:grid-cols-2 items-center h-screen w-screen max-[880px]:bg-[url('/ever_workspace.png')] max-[889px]:bg-fixed bg-cover"
+    class="flex min-[889px]:grid min-[889px]:grid-cols-2 items-center h-screen w-screen max-[880px]:bg-[url('/ever_workspace.png')] max-[880px]:bg-fixed max-[880px]:bg-cover"
     id="home"
   >
     <div class="min-[889px]:px-20 mt-36 px-4 z-10">
@@ -33,9 +33,11 @@ import SocialMedia from "../components/SocialMedia.astro";
       </div>
     </div>
 
-    <div class="min-[889px]:relative max-[889px]:absolute w-full h-full">
-      <div class="h-full w-full absolute bg-gradient-to-r from-zinc-950"></div>
-      <div class="h-full w-full absolute bg-gradient-to-t from-zinc-950"></div>
+    <div class="min-[889px]:relative max-[889px]:absolute w-full h-screen">
+      <div class="h-screen w-full absolute bg-gradient-to-r from-zinc-950">
+      </div>
+      <div class="h-screen w-full absolute bg-gradient-to-t from-zinc-950">
+      </div>
       <img src="/ever_workspace.png" class="object-cover max-[880px]:hidden" />
     </div>
     <!-- Image Hero -->
