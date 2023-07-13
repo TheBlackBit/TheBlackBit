@@ -129,6 +129,9 @@ import PopUp from "./PopUp.astro";
       elementToShow.classList.remove("hidden");
     }
 
+    console.log(elementToShow.classList);
+
+    elementToShow.classList.remove("animate-fadeOut");
     elementToShow.classList.add("animate-fadeIn");
     elementToShow.addEventListener("animationend", () => {
       elementToShow.classList.remove("animate-fadeIn");
