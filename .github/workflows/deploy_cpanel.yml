@@ -1,0 +1,44 @@
+# Sample workflow for building and deploying an Astro site to Cpanel
+#
+# To get started with Astro see: https://docs.astro.build/en/getting-started/
+#
+name: Deploy Astro site to CPanel
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    tags:
+      - 'v*'
+
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+env:
+  SERVER-NAME-FTP: "p3plzcpnl496826.prod.phx3.secureserver.net"
+  USER-NAME-FTP: "eversolis@theblackbit.io"  
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - uses: elgohr/Github-Release-Action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        with:
+          title: ${{ env.RELEASE_VERSION }}
+      - uses: radenpioneer/astro-ftp-deploy@v0.1.1
+        with:
+          server: ${{ env.SERVER-NAME-FTP }}
+          username: ${{ env.USER-NAME-FTP }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          directory: "/"
+          node-version: 16
+          
