@@ -39,19 +39,18 @@
     "stars": null,
     "reviews": null,
     "downloads": null,
-    "playstore": "#",
+    "playstore": "https://play.google.com/store/apps/details?id=com.theblackbit.animemania.android",
     "appstore": null,
-    "github": "#",
+    "github": "https://github.com/TheBlackBit/Animemania.git",
     "imageUrl": "/anime_mania_preview.png",
     "description": "Native android app that collects information about trending anime and manga using the kitsu API",
     "technologies": [
       "Kotlin",
-      "MVI",
+      "MVVM",
       "MotionLayout",
       "Firebase",
       "Paging3",
       "RxJava",
-      "KTOR",
       "SOLID",
       "ROOM",
       "Cache",
@@ -60,7 +59,7 @@
       "CI/CD",
       "Fastlane",
       "Espresso",
-      "Mockk"
+      "Mockito"
     ]
   },
 
@@ -70,9 +69,9 @@
     "stars": null,
     "reviews": null,
     "downloads": null,
-    "playstore": "https://play.google.com/store/apps/details?id=com.ti777.ever.myschedule",
+    "playstore": null,
     "appstore": null,
-    "github": "#",
+    "github": "https://github.com/TheBlackBit/InstantFlix.git",
     "imageUrl": "/instaflix_preview.png",
     "description": "Native Android application that collects information from TV shows and movies using TheMovieDb Api. The App offers the facility of having a widget on the phone's home page to have the latest movie at the moment.",
     "technologies": [
@@ -88,7 +87,6 @@
       "hilt",
       "Retrofit",
       "TDD",
-      "CI/CD",
       "Fastlane",
       "Espresso",
       "Mockk"
@@ -101,9 +99,9 @@
     "stars": null,
     "reviews": null,
     "downloads": null,
-    "playstore": "https://play.google.com/store/apps/details?id=com.ti777.ever.myschedule",
+    "playstore": null,
     "appstore": null,
-    "github": "#",
+    "github": "https://github.com/TheBlackBit/sityTv.git",
     "imageUrl": "/sity_tv_preview.png",
     "description": "Native android app that collect information of Tv Shows and Movies using TvMaze Api. The app has features such as bookmarks, cache, search among others.",
     "technologies": [
@@ -119,7 +117,6 @@
       "Cache",
       "Firebase",
       "TDD",
-      "CI/CD",
       "Fastlane",
       "Espresso",
       "Mockk"
