@@ -1,9 +1,33 @@
 [
   {
+    "name": "Koombea",
+    "date": "Oct 2023 - Current",
+    "platform": ["Android"],
+    "current": true,
+    "url": "https://www.koombea.com/app-development-company/",
+    "position": "Senior Mobile Developer",
+    "description": "At Koombea, I have the privilege of working on a wide variety of projects across multiple industries. Leveraging my expertise in mobile development and proficiency in leading-edge technologies, I played a key role in delivering high-quality solutions that exceeded client expectations and contributed to significant business success.",
+    "technologies": [
+      "Kotlin",
+      "MVVM",
+      "Compose",
+      "Jetpack",
+      "Flows",
+      "Retrofit",
+      "Firebase",
+      "CI/CD",
+      "S3",
+      "Bitrise",
+      "TDD",
+      "Espresso",
+      "Mockito"
+    ]
+  },
+  {
     "name": "The Bridge",
     "date": "Jan 2022 - May 2023",
     "platform": ["Android"],
-    "current": true,
+    "current": false,
     "url": "https://www.thebridge.social/es/",
     "position": "Senior Android Developer",
     "description": "Deliver high-quality, robust production code for a mutual funds Android native app. I collaborated closely with product managers, designers, ios developers, sre engineers and backend developers to understand the requirements and translate them into scalable and efficient Android solutions.",
@@ -16,7 +40,7 @@
       "Firebase",
       "CI/CD",
       "CodeClimate",
-      "Bitraise",
+      "Bitrise",
       "TDD",
       "Espresso",
       "Jacoco",
@@ -76,7 +100,6 @@
     "name": "Elaniin",
     "date": "Jun 2019 - Jan 2020",
     "platform": ["Android"],
-
     "current": false,
     "url": " https://www.elaniin.com/",
     "position": "Android Developer",
